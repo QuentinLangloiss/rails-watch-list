@@ -1,0 +1,14 @@
+<h1>Show</h1>
+
+<h2><%= @list.name %></h2>
+
+<ul>
+<%= @list.movies.each do |movie| %>
+  <li><%= movie.title %></li>
+  <li><%= movie.comment %></li>
+<% end %>
+</ul>
+
+<%= link_to "Add a bookmark", new_bookmark_path %>
+
+<%= link_to "Go back", lists_path %>
