@@ -3,9 +3,9 @@
 <h2><%= @list.name %></h2>
 
 <ul>
-<%= @list.movies.each do |movie| %>
-  <li><%= movie.title %></li>
-  <li><%= movie.comment %></li>
+<%= @list.bookmarks.each do |movie| %>
+  <li><%= bookmark.movie.title %></li>
+  <li><%= bookmark.movie.overview %></li>
 <% end %>
 </ul>
 

@@ -1,8 +1,44 @@
-<h1>Index</h1>
-<ul>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "https://images.unsplash.com/photo-1585647347483-22b66260dfff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9wY29ybnxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "My lists", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New list", "#", class: "nav-link" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2luZW1hfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60);">
+  <div class="container">
+    <h1 class="text-center">Save any kind of movies</h1>
+    <p class="text-center">Classic</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+<div class="mt-5">
+<h1 class="fw-bold ms-5">My lists</h1>
+
+<ul class="card-list">
   <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list.id) %></li>
+    <div class="card-category mt-2 w-25 mx-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://plus.unsplash.com/premium_photo-1676573201174-75d318b983e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dGl0YW5pY3xlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60)">
+    <li><%= link_to list.name, list_path(list.id), class: "text-decoration-none" %></li>
+    </div>
   <% end %>
 </ul>
-
-<%= link_to "Create a movie list", new_list_path %>
+<div class="d-flex justify-content-center">
+<%= link_to "Create a movie list", new_list_path, class: "btn btn-success text-white fw-bold" %>
+</div>
+</div>
